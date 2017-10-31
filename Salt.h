@@ -13,17 +13,18 @@
 
 #ifndef SALT_H
 #define SALT_H
+#include <string>
 
-template <class T>
+using namespace std;
+
 class Salt {
 public:
-    Salt();
-    Salt(const Salt& orig);
-    ~Salt();
-    virtual T saltedValue(T key);
+    Salt() {}
+    virtual string saltedValue(string key){};
 protected:
+    ~Salt() {}
     int seedValue;
-    virtual void generateSalt();
+    virtual void generateSalt(){};
 };
 
 #endif /* SALT_H */

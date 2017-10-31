@@ -16,7 +16,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>InvalidSaltException.cpp</itemPath>
-      <itemPath>Salt.cpp</itemPath>
       <itemPath>TimeSaltGeneration.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -45,8 +44,6 @@
       <item path="InvalidSaltException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="InvalidSaltException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Salt.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Salt.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -80,8 +77,6 @@
       <item path="InvalidSaltException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="InvalidSaltException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Salt.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Salt.h" ex="false" tool="3" flavor2="0">
       </item>

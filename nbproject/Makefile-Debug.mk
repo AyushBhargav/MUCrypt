@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/InvalidSaltException.o \
-	${OBJECTDIR}/Salt.o \
 	${OBJECTDIR}/TimeSaltGeneration.o \
 	${OBJECTDIR}/main.o
 
@@ -69,11 +68,6 @@ ${OBJECTDIR}/InvalidSaltException.o: InvalidSaltException.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/InvalidSaltException.o InvalidSaltException.cpp
-
-${OBJECTDIR}/Salt.o: Salt.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Salt.o Salt.cpp
 
 ${OBJECTDIR}/TimeSaltGeneration.o: TimeSaltGeneration.cpp 
 	${MKDIR} -p ${OBJECTDIR}

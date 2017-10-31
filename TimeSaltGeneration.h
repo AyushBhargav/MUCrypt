@@ -19,11 +19,11 @@
 
 using namespace std;
 
-class TimeSaltGeneration : public Salt<class string>{
+class TimeSaltGeneration : public Salt{
 public:
-    TimeSaltGeneration(int length = 512);
+    TimeSaltGeneration(int length);
     TimeSaltGeneration(const TimeSaltGeneration& orig);
-    virtual ~TimeSaltGeneration();
+    ~TimeSaltGeneration();
     virtual string saltedValue(string key);
 private:
     int saltLength;

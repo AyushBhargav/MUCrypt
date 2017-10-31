@@ -22,9 +22,6 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    string password("password");
-    Salt* salt = new TimeSaltGeneration();
-    cout<<salt->saltedValue(password);
     return 0;
 }
 

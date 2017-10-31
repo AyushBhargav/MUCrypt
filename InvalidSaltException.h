@@ -21,9 +21,8 @@ class InvalidSaltException : public exception {
 public:
     InvalidSaltException();
     InvalidSaltException(const InvalidSaltException& orig);
-    ~InvalidSaltException();
-    const char* what() const throw();
+    ~InvalidSaltException() throw();
+    virtual const char* what() const throw();
 };
 
 #endif /* INVALIDSALTEXCEPTION_H */
-
