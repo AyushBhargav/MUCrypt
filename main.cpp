@@ -1,10 +1,10 @@
 #include <iostream>
-#include <timesaltgeneration.h>
+#include <shadriver.h>
 using namespace std;
 
 int main()
 {
-    Salt* salt = new TimeSaltGeneration(512);
-    cout << salt->saltedValue("Hello") << endl;
+    SHADriver shaDriver;
+    cout << shaDriver.sha256("Ayush Bhargav") << endl;
     return 0;
 }

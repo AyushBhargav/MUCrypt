@@ -14,3 +14,6 @@ HEADERS += \
     salt.h \
     timesaltgeneration.h \
     shadriver.h
+
+LIBS    += -lssl
+LIBS    += -lcrypto
