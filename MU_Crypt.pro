@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     shadriver.cpp \
     filewriter.cpp \
     state.cpp \
-    filereader.cpp
+    filereader.cpp \
+    encrypter.cpp
 
 HEADERS += \
     crypticalgorithm.h \
@@ -19,7 +20,8 @@ HEADERS += \
     shadriver.h \
     filewriter.h \
     state.h \
-    filereader.h
+    filereader.h \
+    encrypter.h
 
 LIBS    += -lssl
 LIBS    += -lcrypto
