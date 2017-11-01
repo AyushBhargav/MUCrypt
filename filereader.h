@@ -1,14 +1,15 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 
-#include <string.h>
+#include <string>
+using namespace std;
 
 class FileReader
 {
 private:
     string file;
 public:
-    FileReader(string salt);
+    FileReader(string file);
     string read(int start, int length);
 };
 

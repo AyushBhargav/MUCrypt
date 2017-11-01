@@ -1,6 +1,7 @@
 #include <filereader.h>
 #include <fstream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,13 +14,17 @@ string FileReader::read(int start, int length) {
     ifstream i_file;
     i_file.open(file, ios::in);
 
+    if(!i_file.is_open())
+        return "File couldn't be opened";
+
     i_file.seekg(start, ios::beg);
 
     char* content = new char[length + 1];
-
-    i_file.read(content, length);
-    cout<<content;
-
+    int index = 0;
+    for(int i = 0; i < length; i++) {
+        content[index++] = (char)i_file.get();
+    }
+    content[index] = '\0';
     string str(content);
     return str;
 }

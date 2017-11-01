@@ -1,11 +1,10 @@
 #include <iostream>
-#include <shadriver.h>
+#include <filewriter.h>
 using namespace std;
 
 int main()
 {
-    SHADriver shaDriver;
-    cout << shaDriver.sha256("Ayush Bhargav") << endl;
-    cout << shaDriver.sha256("Ayush Bhargav") << endl;
+    FileWriter fr("text.txt");
+    fr.write(8,"arg");
     return 0;
 }
