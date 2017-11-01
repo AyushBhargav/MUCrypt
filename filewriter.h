@@ -11,7 +11,7 @@ private:
     string file;
 public:
     FileWriter(string file);
-    void write(int start, string str);
+    void write(int start, int end, string str);
 };
 
 #endif // FILEWRITER_H
