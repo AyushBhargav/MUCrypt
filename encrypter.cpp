@@ -33,4 +33,5 @@ void Encrypter::encrypt(int start, int end, string password, string file) {
     FileWriter fw(file);
     string data_writable = generatedSalt + state.getOpeningDelimiter() + encryptedContent + state.getClosingDelimiter();
     fw.write(start, end, data_writable);
+    delete algorithmArgs;
 }

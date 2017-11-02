@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     encrypter.cpp \
     aesalgorithm.cpp \
     encryptedfilestate.cpp \
-    parser.cpp
+    parser.cpp \
+    decrypter.cpp
 
 HEADERS += \
     crypticalgorithm.h \
@@ -27,7 +28,8 @@ HEADERS += \
     encrypter.h \
     aesalgorithm.h \
     encryptedfilestate.h \
-    parser.h
+    parser.h \
+    decrypter.h
 
 LIBS    += -lssl
 LIBS    += -lcrypto

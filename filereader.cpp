@@ -27,6 +27,7 @@ string FileReader::read(int start, int length) {
     }
     content[index] = '\0';
     string str(content);
+    delete content;
     return str;
 }
 
