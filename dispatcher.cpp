@@ -9,18 +9,18 @@ Dispatcher::Dispatcher()
 
 }
 
-Dispatcher::process(string args[]){
+void Dispatcher::process(string args[]){
     //0 - enc/dec
     //1 - filename
     //2 - password
     //3 - start
     //4 - end
 
-    if(arg[0] == "encrypt"){
+    if(args[0] == "encrypt"){
         Encrypter encrypter;
         encrypter.encrypt(stoi(args[3]),stoi(args[4]),args[2],args[1]);
     }
-    else if(arg[0] == "decrypt"){
+    else if(args[0] == "decrypt"){
         Parser parser;
         Decrypter decrypter;
         decrypter.decrypt(parser.getEncryptedData(args[2],args[1]),args[1]);
