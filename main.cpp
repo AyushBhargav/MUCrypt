@@ -1,10 +1,10 @@
 #include <iostream>
-#include <encrypter.h>
+#include <filewriter.h>
 using namespace std;
 
 int main()
 {
-    Encrypter encrypter;
-    encrypter.encrypt(2,5,"hi","text.txt",1);
+    FileWriter fw("text.txt");
+    fw.write(0,5,"b");
     return 0;
 }
