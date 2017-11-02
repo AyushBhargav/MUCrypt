@@ -2,6 +2,7 @@
 #define CRYPTICALGORITHM_H
 
 #include <string>
+using namespace std;
 
 class CrypticAlgorithm {
 public:

@@ -19,7 +19,7 @@ public:
      * 3. RSA
      * 4. Fuck urself
      * */
-    string encrypt(int start, int end, string password, string file, int algorithm);
+    void encrypt(int start, int end, string password, string file, int algorithm);
 };
 
 #endif // ENCRYPTER_H

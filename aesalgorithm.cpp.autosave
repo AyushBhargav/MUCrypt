@@ -10,7 +10,7 @@ AESAlgorithm::AESAlgorithm()
 }
 
 string AESAlgorithm::encrypt(string args[], int n) {
-    char oneKey[args[0].length()] = {args[0].c_str()};
+    char oneKey[args[0].length()] = args[0].c_str();
     AES_KEY key; // must be 16 bytes
     AES_set_encrypt_key(oneKey, 128, &key);
 

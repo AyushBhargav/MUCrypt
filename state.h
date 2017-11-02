@@ -11,14 +11,17 @@ private:
     string salt;
     string password;
     int n_hashing;
-    char openingDelimiter;
-    char closingDelimiter;
+    string openingDelimiter;
+    string closingDelimiter;
 public:
     State();
     void setSalt(string salt);
     void setPassword(string password);
     string getSalt();
     string getPassword();
+    int getN_hashing();
+    string getOpeningDelimiter();
+    string getClosingDelimiter();
 };
 
 #endif // STATE_H
