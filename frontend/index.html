@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <title>MU_Crypt</title>
     <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="./jquery-fieldselection.min.js"></script>
     <link rel = "stylesheet"
          href = "./bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-os'</script>
+    <link rel="stylesheet" href="./vex.css" />
+    <link rel="stylesheet" href="./vex-theme-os.css" />
   </head>
   <body>
     <div class = "container">
@@ -18,7 +23,7 @@
       <div class='row'>
         <div class="form-group">
           <label for="filePath">Input File</label>
-          <input type="file" class="form-control-file" id="filePath">
+          <input id="fileSelector" type="file" class="form-control-file" id="filePath">
         </div>
       </div>
       <div class="row">
@@ -38,17 +43,22 @@
             </div>
             <div class="form-group">
               <label for="fileContent">File Contents</label>
-              <textarea class="form-control" id="fileContent" rows="10"></textarea>
+              <textarea class="form-control" readonly="false" id="fileContent" rows="10"></textarea>
             </div>
             <div class="row">
               <div class="col-sm-4">
-                <button type="button" class="btn btn-default btn-lg" id="encryptIt">
-                  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-                  Encrypt It!
-                </button>
+                <div class="input-group">
+                  <input id="userPassword" type="text" class="form-control" placeholder="Password" aria-label="Password">
+                  <span class="input-group-btn">
+                    <button id="encryptIt" class="btn btn-secondary" type="button">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                      Encrypt!
+                    </button>
+                  </span>
+                </div>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="btn btn-default btn-lg" id="clearIt">
+                <button type="button" class="btn btn-secondary" id="clearIt">
                   <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                   Clear All!
                 </button>
