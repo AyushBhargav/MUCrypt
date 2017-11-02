@@ -1,10 +1,9 @@
 #include <iostream>
-#include <filewriter.h>
+#include <aesalgorithm.h>
+#include <string.h>
+
 using namespace std;
 
 int main()
 {
-    FileWriter fw("text.txt");
-    fw.write(0,5,"b");
-    return 0;
 }

@@ -37,10 +37,10 @@ void TimeSaltGeneration::generateSalt() {
         buffer << r_ch;
     }
 
-    int fillerChar = 126;
+    /*int fillerChar = 126;
     for(int i = this->saltLength; i < 512; i++) {
         buffer << fillerChar;
-    }
+    }*/
 
     this->generatedSalt = buffer.str();
 
