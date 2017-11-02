@@ -38,3 +38,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+MU_Crypt.pro

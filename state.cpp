@@ -4,8 +4,8 @@
 State::State()
 {
     this->n_hashing = 16;
-    this->openingDelimiter = "$";
-    this->closingDelimiter = "#";
+    this->openingDelimiter = "$$$$$";
+    this->closingDelimiter = "#####";
 }
 
 void State::setSalt(string salt) {

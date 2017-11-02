@@ -1,5 +1,6 @@
 #include <filereader.h>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <iostream>
 
@@ -28,3 +29,11 @@ string FileReader::read(int start, int length) {
     string str(content);
     return str;
 }
+
+string FileReader::readAll(){
+    std::ifstream t(file);
+    std::stringstream buffer;
+    buffer << t.rdbuf();
+    return buffer.str();
+}
+

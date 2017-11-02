@@ -11,6 +11,7 @@ private:
 public:
     FileReader(string file);
     string read(int start, int length);
+    string readAll();
 };
 
 #endif // FILEREADER_H
