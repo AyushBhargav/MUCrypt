@@ -12,7 +12,7 @@ public:
     EncryptedFileState(bool isParsed);
     int startPosition;
     int endPosition;
-    string EncryptedContent;
+    string encryptedContent;
     string password;
     bool getParsedStatus();
 };

@@ -12,6 +12,7 @@ SOURCES += main.cpp \
     filereader.cpp \
     encrypter.cpp \
     aesalgorithm.cpp \
+    encryptedfilestate.cpp \
     parser.cpp
 
 HEADERS += \
@@ -25,9 +26,8 @@ HEADERS += \
     filereader.h \
     encrypter.h \
     aesalgorithm.h \
+    encryptedfilestate.h \
     parser.h
 
-LIBPATH+=C:/GnuWin32/lib
-LIBS+=-LC:/GnuWin32/lib -llibeay32 -llibssl -llibcrypto
-INCLUDEPATH += C:/GnuWin32/include
-
+LIBS    += -lssl
+LIBS    += -lcrypto
