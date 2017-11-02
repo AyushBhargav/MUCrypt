@@ -44,6 +44,6 @@ void Encrypter::encrypt(int start, int end, string password, string file, int al
     string encryptedContent = c_algorithm->encrypt(algorithmArgs, n_args);
 
     FileWriter fw(file);
-    string data_writable = state.getOpeningDelimiter() + encryptedContent + state.getClosingDelimiter();
+    string data_writable = generatedSalt + state.getOpeningDelimiter() + encryptedContent + state.getClosingDelimiter();
     fw.write(start, end, data_writable);
 }
