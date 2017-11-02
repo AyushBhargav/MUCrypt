@@ -1,5 +1,9 @@
 #include "decrypter.h"
 #include "filewriter.h"
+#include <shadriver.h>
+#include <crypticalgorithm.h>
+#include <state.h>
+#include <aesalgorithm.h>
 
 Decrypter::Decrypter()
 {
