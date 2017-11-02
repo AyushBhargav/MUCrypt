@@ -33,7 +33,7 @@ textArea.addEventListener('select', function() {
 
 // Encryption Panel
 $("#encryptIt").click(function(){
-  let operationCode = 0;
+  let operationCode = "encrypt";
   let file = document.getElementById("fileSelector").files[0].path;
   let password = $("userPassword").val();
   if(startIndex == -1 || endIndex == -1)
@@ -44,7 +44,7 @@ $("#encryptIt").click(function(){
 
   // Real code starts
   var child = execFile("./MU_Crypt",
-    [toString(0), file, password, startIndex.toString(), endIndex.toString()],
+    [operationCode, file, password, startIndex.toString(), endIndex.toString()],
     function(error, stdout, stderr) {
       console.log(stdout);
       vex.dialog.alert('Encryption done!');

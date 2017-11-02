@@ -10,20 +10,20 @@ Dispatcher::Dispatcher()
 }
 
 void Dispatcher::process(string args[]){
-    //0 - enc/dec
-    //1 - filename
-    //2 - password
-    //3 - start
-    //4 - end
+    //1 - enc/dec
+    //2 - filename
+    //3 - password
+    //4 - start
+    //5 - end
 
-    if(args[0] == "encrypt"){
+    if(args[1] == "encrypt"){
         Encrypter encrypter;
-        encrypter.encrypt(stoi(args[3]),stoi(args[4]),args[2],args[1]);
+        encrypter.encrypt(stoi(args[4]),stoi(args[5]),args[3],args[2]);
     }
-    else if(args[0] == "decrypt"){
+    else if(args[1] == "decrypt"){
         Parser parser;
         Decrypter decrypter;
-        decrypter.decrypt(parser.getEncryptedData(args[2],args[1]),args[1]);
+        decrypter.decrypt(parser.getEncryptedData(args[3],args[2]),args[2]);
     }
 }
 
