@@ -11,7 +11,17 @@ function createWindow() {
       protocol: 'file:',
       slashes: true
    }));
+   window.openDevTools();
+   window.on('closed', function() {
+     mainWindow = null;
+   });
    window.setMenu(null);
+   window.maximize();
 }
+
+app.on('window-all-closed', function() {
+  if (process.platform != 'darwin')
+    app.quit();
+});
 
 app.on('ready', createWindow);

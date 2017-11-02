@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>MU_Crypt</title>
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <link rel = "stylesheet"
          href = "./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class = "container">
@@ -14,20 +16,18 @@
         </div>
       </div>
       <div class='row'>
-        <div class="input-group input-group-lg">
-          <span class="input-group-addon" id="sizing-addon1">File:</span>
-          <input type="text" class="form-control" placeholder="File name yahan dalo!" aria-describedby="sizing-addon1">
+        <div class="form-group">
+          <label for="filePath">Input File</label>
+          <input type="file" class="form-control-file" id="filePath">
         </div>
       </div>
       <div class="row">
         <ul class="nav nav-pills">
-          <li role="presentation" class="active"><a href="#">Encryption</a></li>
-          <li role="presentation"><a href="#">Decryption</a></li>
+          <li role="presentation" class="active"><a href="#encryption" data-toggle="tab">Encryption</a></li>
+          <li role="presentation"><a href="#decryption" data-toggle="tab">Decryption</a></li>
         </ul>
-      </div>
-      <div class="row">
         <div id="myTabContent" class="tab-content">
-          <div class="tab-pane in active" id="encryption">
+          <div class="tab-pane active" id="encryption">
             <div class="alert alert-info" role="alert">
               Highlight the required text and click on encrypt the highlight text.
             </div>
@@ -36,14 +36,45 @@
               Because precaution is best security measure.
               <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
             </div>
+            <div class="form-group">
+              <label for="fileContent">File Contents</label>
+              <textarea class="form-control" id="fileContent" rows="10"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" class="btn btn-default btn-lg" id="encryptIt">
+                  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                  Encrypt It!
+                </button>
+              </div>
+              <div class="col-sm-4">
+                <button type="button" class="btn btn-default btn-lg" id="clearIt">
+                  <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                  Clear All!
+                </button>
+              </div>
+            </div>
           </div>
-        <div class="tab-pane " id="decryption">
-          <p>Microsoft Windows is a series of graphical
-            interface operating systems developed, marketed,
-            and sold by Microsoft</p>
+          <div class="tab-pane" id="decryption">
+            <div class="alert alert-info" role="alert">
+              Enter the password in reverse order as you entered it in the first place.
+            </div>
+            <div class="alert alert-danger" role="alert">
+              Incorrect order may result in corruption of data!!! Proceed with caution.
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </div>
+            <div id="passwordArea" class="input-group">
+            </div>
+            <button id="addPassword" class="btn btn-primary" type="button">
+              Add Password <span id="passwordCount" class="badge">0</span>
+            </button>
+            <button id="decryptIt" type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
-      </div>
     </div>
-  </body>
+  </div>
   <script src="./view.js"></script>
+  </body>
 </html>
