@@ -2,12 +2,48 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>MU_Crypt</title>
+    <link rel = "stylesheet"
+         href = "./bower_components/bootstrap/dist/css/bootstrap.min.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class = "container">
+      <div class='row'>
+        <div class="page-header">
+          <h1>MU_Crypt <small>More the cryption, more the mystery!</small></h1>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="sizing-addon1">File:</span>
+          <input type="text" class="form-control" placeholder="File name yahan dalo!" aria-describedby="sizing-addon1">
+        </div>
+      </div>
+      <div class="row">
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="#">Encryption</a></li>
+          <li role="presentation"><a href="#">Decryption</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane in active" id="encryption">
+            <div class="alert alert-info" role="alert">
+              Highlight the required text and click on encrypt the highlight text.
+            </div>
+            <div class="alert alert-warning" role="alert">
+              Never share your personal password to keep your private data secure.
+              Because precaution is best security measure.
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            </div>
+          </div>
+        <div class="tab-pane " id="decryption">
+          <p>Microsoft Windows is a series of graphical
+            interface operating systems developed, marketed,
+            and sold by Microsoft</p>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="./view.js"></script>
 </html>
