@@ -27,7 +27,7 @@ let textArea = document.getElementById("fileContent");
 textArea.addEventListener('select', function() {
   let selectionRange = $("#fileContent").getSelection();
   startIndex = selectionRange.start;
-  endIndex = selectionRange.end;
+  endIndex = selectionRange.start + selectionRange.length - 1;
   vex.dialog.alert('Starting Index : ' + (startIndex + 1) + "\nEnding Index : " + (endIndex + 1));
   }, false);
 
@@ -35,12 +35,11 @@ textArea.addEventListener('select', function() {
 $("#encryptIt").click(function(){
   let operationCode = "encrypt";
   let file = document.getElementById("fileSelector").files[0].path;
-  let password = $("userPassword").val();
+  let password = $("#userPassword").val();
   if(startIndex == -1 || endIndex == -1)
     return;
   console.log(">>" + startIndex);
   console.log(">>>" + endIndex);
-  fetchFile();
 
   // Real code starts
   var child = execFile("./MU_Crypt",
@@ -48,6 +47,7 @@ $("#encryptIt").click(function(){
     function(error, stdout, stderr) {
       console.log(stdout);
       vex.dialog.alert('Encryption done!');
+      fetchFile();
     });
 });
 
@@ -68,5 +68,18 @@ $("#addPassword").click(function(){
 });
 
 $("#decryptIt").click(function(){
+  let operationCode = "decrypt";
+  let file = document.getElementById("fileSelector").files[0].path;
+  for(var i = 0; i < passwordFieldCount; i++) {
+    var pid = "#pid" + i;
+    var password = $(pid).val();
+    var child = execFile("./MU_Crypt",
+      [operationCode, file, password],
+      function(error, stdout, stderr) {
+        console.log(stdout);
+      });
+  }
 
+  vex.dialog.alert('Decryption done!');
+  fetchFile();
 });

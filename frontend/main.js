@@ -11,7 +11,7 @@ function createWindow() {
       protocol: 'file:',
       slashes: true
    }));
-   window.openDevTools();
+   //window.openDevTools();
    window.on('closed', function() {
      mainWindow = null;
    });

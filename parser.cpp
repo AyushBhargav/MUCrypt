@@ -30,7 +30,7 @@ EncryptedFileState Parser::getEncryptedData(string password,string file){
             int textStartPos = startPos + state.getOpeningDelimiter().length();
             int textEndPos = fileContent.find(state.getClosingDelimiter(),startPos + 1);
             efs.startPosition = startPosHeader;
-            efs.endPosition = textEndPos + state.getClosingDelimiter().length();
+            efs.endPosition = textEndPos + state.getClosingDelimiter().length() - 1;
             efs.encryptedContent = fr.read(textStartPos , textEndPos - textStartPos);
             efs.password = password;
             return efs;

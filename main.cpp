@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <dispatcher.h>
+#include <filewriter.h>
 
 using namespace std;
 
@@ -12,4 +13,5 @@ int main(int argc, char* args[])
         s_args[i] = string(args[i]);
     }
     dispatcher.process(s_args);
+
 }
